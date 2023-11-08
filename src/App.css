@@ -1,30 +1,45 @@
-#root {
-
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inclusive Sans', sans-serif;
+  color: white;
+  font-size: 25pt;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#root {
+  --darkBackGround: #0e1111;
+  --Color1: #232b2b;
+
+}
+
+a {
+  text-decoration: none;
+  color: var(--fontColor);
 }
 
 
+body {
+  background-color: #0e1111;
+}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: .75rem;
+}
+
+input {
+  min-width: 100%;
+  color: black;
+}
+
+button {
+  background-color: green;
+  color: white;
+  min-width: 100%;
 }
