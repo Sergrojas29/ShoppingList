@@ -42,4 +42,5 @@ button {
   background-color: green;
   color: white;
   min-width: 100%;
+  /* text-decoration: line-through; */
 }
