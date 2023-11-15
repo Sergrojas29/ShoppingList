@@ -2,7 +2,7 @@ export const saveData = {
     autoComplete: true,
     darktheme: true,
     duplicates: false,
-    list: ['EGGS', "CHEESE", "MILK", "BREAD"],
+    list: ['EGGS'],
     checked: [],
     name: "Guest",
     saveOld: true,
@@ -43,4 +43,25 @@ export function deleteItem(key, data, setData) {
 
 export  function handleCheck(grocery, data, setData) {
   setData({ ...data, checked: [...data.checked, grocery] })
+}
+
+export function handleRemoveCheck(grocery, data, setData){
+  const updatedList = data.checked.filter((food) => food != grocery);
+  setData({ ...data, checked: updatedList });
+}
+
+export function resetData(){
+  window.localStorage.clear();
+  location.reload();
+}
+
+export function  initSaveData(setData) {
+  if (!window.localStorage.getItem('saveData')) {
+    window.localStorage.setItem("saveData", JSON.stringify(saveData));
+    console.log('Save Created');
+  } else {
+    setData(JSON.parse(window.localStorage.getItem('saveData')));
+    console.log('Loaded');
+  }
+  
 }
